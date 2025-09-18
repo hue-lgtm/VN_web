@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數位媒體的演進</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        .timeline-container {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background-color: #cbd5e1;
+            transform: translateX(-50%);
+        }
+        .timeline-event {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 60px;
+            text-align: left;
+        }
+        .timeline-event:nth-child(even) {
+            padding-left: 0;
+            padding-right: 60px;
+            text-align: right;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: #3b82f6;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        .timeline-event:nth-child(even) .timeline-dot {
+            left: auto;
+            right: 50%;
+        }
+        .timeline-content {
+            background-color: #fff;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        .timeline-content.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .timeline-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
+            }
+            .timeline-event,
+            .timeline-event:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                text-align: left;
+            }
+            .timeline-dot,
+            .timeline-event:nth-child(even) .timeline-dot {
+                left: 20px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md py-6 px-4 md:px-8 lg:px-12 sticky top-0 z-50 rounded-b-lg">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-bold text-center text-blue-600">數位媒體的演進：從紙本到虛擬實境</h1>
+            <p class="text-center text-gray-500 mt-2">一場持續改變世界的科技之旅</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 md:px-8 lg:px-12 py-12">
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-4 text-center">引言</h2>
+                <p class="text-lg text-gray-700 leading-relaxed text-center">
+                    歡迎來到數位媒體的奇妙世界！在過去短短幾十年裡，我們的生活、工作和溝通方式被徹底改變。從傳統的報紙和廣播，到現在人人手上的智慧型手機，這場數位革命的速度令人驚嘆。讓我們一起回顧這段精彩的旅程，探索數位媒體是如何一步步塑造我們的現在與未來。
+                </p>
+            </div>
+        </section>
+
+        <section class="timeline-container relative">
+            <div class="timeline-line"></div>
+
+            <!-- Event 1: 1980s - 1990s -->
+            <div class="timeline-event relative">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content rounded-xl shadow-lg bg-white p-6 md:p-8 w-full md:w-2/3 lg:w-1/2">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">第一章：數位化的萌芽期 (1980s - 1990s)</h3>
+                    <img src="https://placehold.co/800x400/3b82f6/ffffff?text=1980s+PC" alt="1980年代的個人電腦" class="timeline-image">
+                    <p class="text-gray-700">這個時代，電腦開始進入家庭和辦公室，為數位媒體的發展奠定基礎。關鍵技術包含個人電腦、網際網路的初步普及以及 CD-ROM。</p>
+                    <ul class="list-disc list-inside mt-4 text-gray-600">
+                        <li>**數位出版：** 桌面出版軟體讓個人也能製作出版物。</li>
+                        <li>**多媒體光碟：** CD-ROM 提供了早期的互動式多媒體體驗。</li>
+                        <li>**電子郵件與論壇：** 早期網際網路溝通的主要形式。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Event 2: 2000s -->
+            <div class="timeline-event relative">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content rounded-xl shadow-lg bg-white p-6 md:p-8 w-full md:w-2/3 lg:w-1/2 ml-auto">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">第二章：網際網路的爆發期 (2000s)</h3>
+                    <img src="https://placehold.co/800x400/22c55e/ffffff?text=Blogging+and+Social+Media" alt="部落格與社群媒體圖示" class="timeline-image">
+                    <p class="text-gray-700">網際網路開始深入人們的生活，媒體的傳播方式發生了質變。這段時期寬頻網路和社群媒體興起。</p>
+                    <ul class="list-disc list-inside mt-4 text-gray-600">
+                        <li>**部落格與個人媒體：** 任何人都可以成為內容創作者。</li>
+                        <li>**YouTube 的誕生：** 開啟了影音分享的時代。</li>
+                        <li>**社群媒體的崛起：** Facebook、Twitter 等平台讓使用者建立社交網路。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Event 3: 2010s -->
+            <div class="timeline-event relative">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content rounded-xl shadow-lg bg-white p-6 md:p-8 w-full md:w-2/3 lg:w-1/2">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">第三章：行動化與社群媒體時代 (2010s)</h3>
+                    <img src="https://placehold.co/800x400/f59e0b/ffffff?text=Smartphones+and+Streaming" alt="智慧型手機與串流服務圖示" class="timeline-image">
+                    <p class="text-gray-700">智慧型手機的普及，讓數位媒體變得無所不在。關鍵技術包含智慧型手機、高速行動網路和雲端運算。</p>
+                    <ul class="list-disc list-inside mt-4 text-gray-600">
+                        <li>**影音串流平台：** Netflix、Spotify 改變了人們觀看影視和收聽音樂的方式。</li>
+                        <li>**即時通訊軟體：** 成為個人溝通與行銷的重要管道。</li>
+                        <li>**短影音平台：** TikTok 重新定義了內容消費習慣。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Event 4: 2020s - Present -->
+            <div class="timeline-event relative">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content rounded-xl shadow-lg bg-white p-6 md:p-8 w-full md:w-2/3 lg:w-1/2 ml-auto">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">第四章：沉浸式與智慧化媒體 (2020s 至今)</h3>
+                    <img src="https://placehold.co/800x400/ef4444/ffffff?text=VR+and+AI" alt="虛擬實境與人工智慧圖示" class="timeline-image">
+                    <p class="text-gray-700">我們正走向一個媒體與現實界線模糊的時代。關鍵技術包含虛擬實境 (VR)、擴增實境 (AR) 和人工智慧 (AI)。</p>
+                    <ul class="list-disc list-inside mt-4 text-gray-600">
+                        <li>**元宇宙：** 打造虛擬共享的數位世界。</li>
+                        <li>**AI 內容生成：** 能夠自動生成文字、圖片、甚至影片內容。</li>
+                        <li>**AR 濾鏡與遊戲：** 將虛擬物件疊加到現實世界中。</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-4 text-center">結論：這場旅程尚未結束</h2>
+                <p class="text-lg text-gray-700 leading-relaxed text-center">
+                    數位媒體的演進是一場持續不斷的變革。從早期的單向傳播，到現在人人都能參與創作、分享與互動。科技的每一次飛躍，都重新定義了我們與世界的連結。未來，人工智慧、沉浸式技術將會繼續深化數位媒體的應用，創造出更多超乎想像的體驗。你準備好迎接下一個數位媒體時代了嗎？
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineEvents = document.querySelectorAll('.timeline-event');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelector('.timeline-content').classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            timelineEvents.forEach(event => {
+                observer.observe(event);
+            });
+        });
+    </script>
+
+</body>
+</html>
